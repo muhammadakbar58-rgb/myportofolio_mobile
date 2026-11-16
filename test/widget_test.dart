@@ -4,18 +4,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:myportofolio_mobile/main.dart';
 
 void main() {
-  testWidgets('Home page displays the tutorial profile and menu', (
+  testWidgets('Home page displays the owner profile and menu', (
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(const MyApp());
 
     expect(find.text('MyPortfolio'), findsOneWidget);
     expect(find.text('NPM'), findsOneWidget);
-    expect(find.text('2406000001'), findsOneWidget);
+    expect(find.text('2506586311'), findsOneWidget);
     expect(find.text('Name'), findsOneWidget);
-    expect(find.text('Burhan'), findsOneWidget);
+    expect(find.text('Muhammad Akbar Rinaldy'), findsOneWidget);
     expect(find.text('Class'), findsOneWidget);
-    expect(find.text('PBP A'), findsOneWidget);
+    expect(find.text('PBP E'), findsOneWidget);
     expect(find.text('Selamat datang di MyPortfolio Mobile!'), findsOneWidget);
     expect(find.text('Lihat Proyek'), findsOneWidget);
     expect(find.text('Tambah Proyek'), findsOneWidget);
@@ -76,7 +76,7 @@ void main() {
       await tester.pumpAndSettle();
 
       expect(tester.takeException(), isNull);
-      expect(find.text('Burhan'), findsOneWidget);
+      expect(find.text('Muhammad Akbar Rinaldy'), findsOneWidget);
       await tester.ensureVisible(find.text('Logout'));
       await tester.tap(find.text('Logout'));
       await tester.pumpAndSettle();

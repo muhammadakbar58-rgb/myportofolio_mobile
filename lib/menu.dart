@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class MyHomePage extends StatelessWidget {
   MyHomePage({super.key});
 
-  final String npm = '2406000001';
-  final String nama = 'Burhan';
-  final String kelas = 'PBP A';
+  final String npm = '2506586311';
+  final String nama = 'Muhammad Akbar Rinaldy';
+  final String kelas = 'PBP E';
 
   final List<ItemHomepage> items = [
-    ItemHomepage('Lihat Proyek', Icons.folder),
-    ItemHomepage('Tambah Proyek', Icons.add_circle),
-    ItemHomepage('Logout', Icons.logout),
+    ItemHomepage('Lihat Proyek', Icons.folder, Colors.blue.shade700),
+    ItemHomepage('Tambah Proyek', Icons.add_circle, Colors.green.shade700),
+    ItemHomepage('Logout', Icons.logout, Colors.red.shade700),
   ];
 
   @override
@@ -31,6 +31,7 @@ class MyHomePage extends StatelessWidget {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Flexible(
                     child: InfoCard(title: 'NPM', content: npm),
@@ -97,7 +98,7 @@ class InfoCard extends StatelessWidget {
           children: [
             Text(title, style: const TextStyle(fontWeight: FontWeight.bold)),
             const SizedBox(height: 8.0),
-            Text(content),
+            Text(content, textAlign: TextAlign.center),
           ],
         ),
       ),
@@ -108,8 +109,9 @@ class InfoCard extends StatelessWidget {
 class ItemHomepage {
   final String name;
   final IconData icon;
+  final Color color;
 
-  ItemHomepage(this.name, this.icon);
+  const ItemHomepage(this.name, this.icon, this.color);
 }
 
 class ItemCard extends StatelessWidget {
@@ -120,7 +122,7 @@ class ItemCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Theme.of(context).colorScheme.secondary,
+      color: item.color,
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         onTap: () {
